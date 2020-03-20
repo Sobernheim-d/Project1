@@ -1,21 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Safty First</title>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
     <!-- Bootstrap -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
     <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
-</head>
 
-<body>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+
+    <!-- stylesheet -->
+    <link rel="stylesheet" type="text/css" src="assets/css/style.css" />
+  </head>
+
+  <!-- <body>
 =======
+  
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -27,37 +42,64 @@
       integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
       crossorigin="anonymous"
     ></script>
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <link rel="stylesheet" src="assets/css/style.css" />
-  </head>
+   
+  </head> -->
   <body>
-
-    <h1>Safty Detector 3000</h1>
-    <div class="colm-6-lg" id="imageDiv">
+    <div class="container" id="title">
+      <h1>Safety Detector 3000</h1>
+      <div class="colm-6-lg" id="imageDiv">
         <div class="colm-6-lg" id="imageBox container">
-            <img src="http://narrewarrensigns.com.au/wp-content/uploads/2015/03/sharp-sign.png" alt="..." class="rounded-0" />
+          <img
+            src="http://narrewarrensigns.com.au/wp-content/uploads/2015/03/sharp-sign.png"
+            alt="..."
+            class="rounded-0"
+          />
         </div>
+      </div>
     </div>
 
-    <p>
-        Lorem ipsum dolor sit amet, eius phaedrum cu cum. Ad clita efficiendi ius, gloriatur intellegebat ex eam. Quot appellantur eam ut. Ut ius vide inciderint, at dicta antiopam philosophia quo, et cum sint iudico persequeris. Te sit copiosae referrentur.
-        Pro ne sonet possit. Mei no maiorum atomorum. Nihil everti suscipit mel ad, eos an quando graeco persequeris, in wisi postea suscipit per. In qui saepe utroque feugait. Est sumo utamur ei. Pro ex democritum constituto, error facilisis assueverit
-        nam at. Ei dolor appareat eleifend vim, sale possit ad vix. An cum postulant facilisis. Eu nec malis mediocritatem, sed eius sanctus voluptatibus id, ius ocurreret quaerendum in. Ut his vocibus dissentiunt, cum errem labore legendos eu. Pro audire
-        mediocritatem ex. Vim scaevola nominati no, at probo latine mel. Ad dolor scripta discere mel, vis lorem tation saperet ea, ad vocent consectetuer sed. Ut alii enim vix, debet meliore ea sea. Et sea populo oportere praesent, minimum tractatos
-        in duo. Mel utamur invidunt gloriatur no, nec falli audiam expetenda no, intellegat scripserit duo no. Cu eum ferri dolorum. Te munere ornatus principes sit. Prompta aliquam sit in, suas eripuit scriptorem eos ad. Duo ut enim iuvaret hendrerit,
-        at diam summo per.
-    </p>
+    <div class="container" id="content">
+      <p>
+        Lorem ipsum dolor sit amet, eius phaedrum cu cum. Ad clita efficiendi
+        ius, gloriatur intellegebat ex eam. Quot appellantur eam ut. Ut ius vide
+        inciderint, at dicta antiopam philosophia quo, et cum sint iudico
+        persequeris. Te sit copiosae referrentur. Pro ne sonet possit. Mei no
+        maiorum atomorum. Nihil everti suscipit mel ad, eos an quando graeco
+        persequeris, in wisi postea suscipit per. In qui saepe utroque feugait.
+        Est sumo utamur ei. Pro ex democritum constituto, error facilisis
+        assueverit nam at. Ei dolor appareat eleifend vim, sale possit ad vix.
+        An cum postulant facilisis. Eu nec malis mediocritatem, sed eius sanctus
+        voluptatibus id, ius ocurreret quaerendum in. Ut his vocibus
+        dissentiunt, cum errem labore legendos eu. Pro audire mediocritatem ex.
+        Vim scaevola nominati no, at probo latine mel. Ad dolor scripta discere
+        mel, vis lorem tation saperet ea, ad vocent consectetuer sed. Ut alii
+        enim vix, debet meliore ea sea. Et sea populo oportere praesent, minimum
+        tractatos in duo. Mel utamur invidunt gloriatur no, nec falli audiam
+        expetenda no, intellegat scripserit duo no. Cu eum ferri dolorum. Te
+        munere ornatus principes sit. Prompta aliquam sit in, suas eripuit
+        scriptorem eos ad. Duo ut enim iuvaret hendrerit, at diam summo per.
+      </p>
+    </div>
 
-    <form>
+    <div class="container" id="input">
+      <form>
         <div class="form-group">
-            <label for="exampleInputImage">Input Image Here</label>
-            <input type="inputImage" class="form-control" id="imageInput" aria-describedby="Help" />
-            <small id="imageHelp" class="form-text text-muted">Lets see if you are ready to work!</small
-        >
-      </div>
+          <label for="exampleInputImage">Input Image Here</label>
+          <input
+            type="inputImage"
+            class="form-control"
+            id="imageInput"
+            aria-describedby="Help"
+          />
+          <small id="imageHelp" class="form-text text-muted"
+            >Lets see if you are ready to work!</small
+          >
+        </div>
 
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+
     <script src="assets/javascript/app.js"></script>
   </body>
 </html>
