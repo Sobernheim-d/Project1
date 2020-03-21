@@ -15,28 +15,49 @@ firebase.initializeApp(firebaseConfig);
 
 //Skybio API
 $(document).ready(function() {
-  let url =
-    "https://api.skybiometry.com/fc/account/namespaces.json?api_key=61m75vnv9srntq7ui9b9u1gt83&api_secret=ngnjmpho52tfdgnr5u891hs60u&urls=http://tiny.com/673cks$attributes=all";
+  var imageUrl = [
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ9ZZODgBDQ6v5ZONYYah7R4Ci02hMl-bd9wTky5V9ypka-MCPI",
+    "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2F5FY21GJzoXQ%2Fmaxresdefault.jpg&f=1&nofb=1",
+    "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fsafetyandhealthmagazine.com%2Fext%2Fresources%2Fimages%2Fnews%2Fconstruction%2Ffemale-construction-worker.jpg%3Fheight%3D635%26t%3D1515620680%26width%3D1200&f=1&nofb=1"
+  ];
 
-  var settings = {
-    async: true,
-    crossDomain: true,
-    url: url,
-    method: "GET",
-    headers: {
-      "x-rapidapi-host": "face.p.rapidapi.com",
-      "x-rapidapi-key": "3e9420af83msh9f3c3a2f99bf11bp154afejsn314b780e0306",
-      "content-type": "application/x-www-form-urlencoded"
-    },
-    data: {}
-  };
+  for (var i = 0; i < imageUrl.length; i++) {
+    var tag = `<div id=img${i} > <img id=img${i} class='checkImg' src=${imageUrl[i]}></img></div>`;
 
-  $("#btn").on("click", function() {
-    console.log("Call Made");
+    $("#imageDiv").append(tag);
+  }
+
+  $(".checkImg").on("click", function() {
+    imageUrl = $(this).attr("src");
+    let photoID = `#${$(this).attr("id")}`;
+    console.log(photoID);
+    let joeURL =
+      "http://api.skybiometry.com/fc/faces/detect.json?api_key=61m75vnv9srntq7ui9b9u1gt83&api_secret=ngnjmpho52tfdgnr5u891hs60u&urls=" +
+      imageUrl +
+      "&attributes=all";
+
+    let settings = {
+      url: joeURL,
+      method: "GET"
+    };
     $.ajax(settings).done(function(response) {
       console.log(response);
-      console.log(response.status);
-      console.log(response.glasses);
+
+      if (response.photos[0].tags[0].attributes.hat.value == "true") {
+        let html = `<div>HARD HAT DETECTED!!</div>`;
+        $(photoID).append(html);
+      } else {
+        let html = `<div>HARDHAT NOT DETECTED!!</div>`;
+        $(photoID).append(html);
+      }
+
+      if (response.photos[0].tags[0].attributes.glasses.value == "true") {
+        let html = `<div>GLASSES DETECTED!!</div>`;
+        $(photoID).append(html);
+      } else {
+        let html = `<div>GLASSES NOT DETECTED!!</div>`;
+        $(photoID).append(html);
+      }
     });
   });
 });
