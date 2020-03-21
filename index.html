@@ -5,7 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Safty First</title>
 
+<!-- <<<<<<< HTML_DRAFT
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+
+=======
     <!-- bootstrap -->
+<!-- >>>>>>> master --> -->
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -21,29 +27,10 @@
     <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
 
-    <!-- jquery -->
-    <script src="https://code.jquery.com/jquery.js"></script>
-
     <!-- stylesheet -->
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
 
-  <!-- <body>
-=======
-  
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-      crossorigin="anonymous"
-    ></script>
-   
-  </head> -->
   <body>
     <div class="container" id="title">
       <h1>Safety Detector 3000</h1>
@@ -81,25 +68,26 @@
       </p>
     </div>
 
-    <div class="container" id="input">
-      <form>
-        <div class="form-group">
-          <label for="exampleInputImage">Input Image Here</label>
-          <input
-            type="inputImage"
-            class="form-control"
-            id="imageInput"
-            aria-describedby="Help"
-          />
-          <small id="imageHelp" class="form-text text-muted"
-            >Lets see if you are ready to work!</small
-          >
-        </div>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+      </div>
+      <div class="custom-file">
+        <input
+          type="file"
+          class="custom-file-input"
+          id="inputGroupFile01"
+          aria-describedby="inputGroupFileAddon01"
+        />
+        <label class="custom-file-label" for="inputGroupFile01"
+          >Image Here</label
+        >
+      </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
+      <button id="btn" for="inputGroupFile01" class="btn btn-dark">
+        Submit
+      </button>
     </div>
-
     <script src="assets/javascript/app.js"></script>
   </body>
 </html>
