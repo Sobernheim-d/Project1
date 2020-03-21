@@ -17,7 +17,14 @@ firebase.initializeApp(firebaseConfig);
 $(document).ready(function() {
   var imageUrl = [
     "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ9ZZODgBDQ6v5ZONYYah7R4Ci02hMl-bd9wTky5V9ypka-MCPI",
+    "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fst3.depositphotos.com%2F1518767%2F14365%2Fi%2F950%2Fdepositphotos_143650817-stock-photo-portrait-of-smiling-factory-worker.jpg&f=1&nofb=1",
     "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2F5FY21GJzoXQ%2Fmaxresdefault.jpg&f=1&nofb=1",
+    "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.hantover.com%2Fdatasurge%2Fimg%2Fimages%2F102001_Primary_Image_1.jpg&f=1&nofb=1",
+    "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fsafetysunglasses.com%2Fwp-content%2Fuploads%2F2011%2F07%2Fconstruction-worker-with-safety-glasses.jpg&f=1&nofb=1",
+    "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.prlog.org%2F10179643-excimer-argon-co2-laser-safety-glasses-and-goggles-fit-over-universal-fit.jpg&f=1&nofb=1",
+    "",
+    "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.webstaurantstore.com%2Fimages%2Fproducts%2Fextra_large%2F28719%2F1103375.jpg&f=1&nofb=1",
+    "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fstatic8.depositphotos.com%2F1465849%2F950%2Fi%2F950%2Fdepositphotos_9501390-stock-photo-construction-worker.jpg&f=1&nofb=1",
     "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fsafetyandhealthmagazine.com%2Fext%2Fresources%2Fimages%2Fnews%2Fconstruction%2Ffemale-construction-worker.jpg%3Fheight%3D635%26t%3D1515620680%26width%3D1200&f=1&nofb=1"
   ];
 
