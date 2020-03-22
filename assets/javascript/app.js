@@ -29,7 +29,7 @@ $(document).ready(function() {
   ];
 
   for (var i = 0; i < imageUrl.length; i++) {
-    var tag = `<div id=img${i} > <img id=img${i} class='checkImg' src=${imageUrl[i]}></img></div>`;
+    var tag = `<div class=row><div class=column id=img${i} > <img id=img${i} class='checkImg' src=${imageUrl[i]}></img></div></div>`;
 
     $("#imageDiv").append(tag);
   }
@@ -54,20 +54,20 @@ $(document).ready(function() {
       var hardhat = false;
 
       if (response.photos[0].tags[0].attributes.hat.value == "true") {
-        let html = `<div>HARD HAT DETECTED!!</div>`;
+        let html = ` <span id=detector>HARD HAT DETECTED!!</span>`;
         hardhat = true;
         $(photoID).append(html);
       } else {
-        let html = `<div>HARDHAT NOT DETECTED!!</div>`;
+        let html = `<span id=detector >HARDHAT NOT DETECTED!!</span>`;
         $(photoID).append(html);
       }
 
       if (response.photos[0].tags[0].attributes.glasses.value == "true") {
-        let html = `<div>GLASSES DETECTED!!</div>`;
+        let html = `<span id=detector >GLASSES DETECTED!!</span>`;
         glasses = true;
         $(photoID).append(html);
       } else {
-        let html = `<div>GLASSES NOT DETECTED!!</div>`;
+        let html = `<span id=detector >GLASSES NOT DETECTED!!</span>`;
         $(photoID).append(html);
       }
 

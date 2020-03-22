@@ -30,6 +30,25 @@ h1 {
   width: 320px;
 }
 
+#img0,
+#img1,
+#img2,
+#img3,
+#img4,
+#img5,
+#img6,
+#img7,
+#img8,
+#img9 {
+  height: 250px;
+  width: 250px;
+  padding: 0;
+}
+
+#detector {
+  padding-bottom: 15px;
+}
+
 /* p {
   padding-left: 5px;
 } */
