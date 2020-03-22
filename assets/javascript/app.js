@@ -50,8 +50,12 @@ $(document).ready(function() {
     $.ajax(settings).done(function(response) {
       console.log(response);
 
+      var glasses = false;
+      var hardhat = false;
+
       if (response.photos[0].tags[0].attributes.hat.value == "true") {
         let html = `<div>HARD HAT DETECTED!!</div>`;
+        hardhat = true;
         $(photoID).append(html);
       } else {
         let html = `<div>HARDHAT NOT DETECTED!!</div>`;
@@ -60,25 +64,42 @@ $(document).ready(function() {
 
       if (response.photos[0].tags[0].attributes.glasses.value == "true") {
         let html = `<div>GLASSES DETECTED!!</div>`;
+        glasses = true;
         $(photoID).append(html);
       } else {
         let html = `<div>GLASSES NOT DETECTED!!</div>`;
         $(photoID).append(html);
+      }
+
+      if (glasses === true && hardhat === true) {
+        giphyCall("success");
+      } else {
+        giphyCall("fail");
       }
     });
   });
 });
 
 //Giphy API
-var thing = $(this).attr("data");
-console.log("thing: " + thing);
-var queryURL =
-  "https://api.giphy.com/v1/gifs/search?q=green+light&api_key=C01R2xURFqCz6oEkz89pIqaDGFPgxD4N&limit=1";
+function giphyCall(pass) {
+  // console.log("thing: " + thing);
+  var queryURL =
+    "https://api.giphy.com/v1/gifs/search?q=" +
+    pass +
+    "&api_key=C01R2xURFqCz6oEkz89pIqaDGFPgxD4N&limit=1";
 
-$.ajax({
-  url: queryURL,
-  method: "GET"
-});
+  $.ajax({
+    url: queryURL,
+    method: "GET"
+  }).then(function(response) {
+    console.log(response.data[0].images.fixed_height.url);
+    var gif = response.data[0].images.fixed_height.url;
+    // var gifimg = $("<img src=" + gif + ">");
+    var html = `<img src="${gif}"></img>`;
+    console.log(html);
+    $("#imageDiv").append(html);
+  });
+}
 
 $(document).on("click", ".giphy-img", function() {
   console.log("on click");

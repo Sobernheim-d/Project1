@@ -5,98 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Safety First</title>
 
-    <!-- <<<<<<< HTML_DRAFT-->
     <!-- jquery -->
     <script src="https://code.jquery.com/jquery.js"></script>
 
-    <!-- bootstrap -->
-    <!-- >>>>>>> master -->
-
+    <!-- materialize -->
     <link
       rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-      crossorigin="anonymous"
-    ></script>
+
+    <!-- css stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css" />
 
     <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
-
-    <!-- stylesheet -->
-    <link rel="stylesheet" href="assets/css/style.css" />
   </head>
 
   <body>
-<!-- <<<<<<< stylesheet -->
     <div class="container">
       <h1>Worker Safety Inspector 3000</h1>
-      <h2>Are you ready to <span id="go">go</span>?</h2>
+
+      <br />
+
+      <h3>
+        Are you <span id="ready">ready </span><span id="to">to </span
+        ><span id="go">GO</span>?
+      </h3>
       <div class="row">
-        <div class="col-4" id="imageDiv">
-          <!-- <div class="colm-6-lg" id="imageBox container"> -->
-<!-- ======= -->
-    <div class="container" id="title">
-      <h1>Safety Detector 3000</h1>
-      <div class="colm-6-lg">
-        <div class="colm-6-lg" id="imageBox container">
-<!-- >>>>>>> master -->
+        <div class="col s5">
           <img
             id="title-image"
-            height="220px"
-            width="285px"
             src="assets/images/traffic-light.jpg"
             alt="..."
             class="rounded-0"
           />
-          <!-- </div> -->
         </div>
 
-<!-- <<<<<<< stylesheet -->
-        <!-- <div class="container" id="content"> -->
-        <div class="col-8">
-          <p>
-            Worker Safety: Check-in code to make sure you are safe and ready to
-            go for work! Working here at XYZ Construction corporation means that
-            you are ready, rested, and have your proper personal protective
-            equipment (PPE) on. For XYZ construction sites, that means you are
-            wearing your safety glasses and hardhat on! We want to make sure
-            that we meet the ASME standards for construction sites and, more
-            importantly, keep you safe from falling objects, or hitting your
-            head when you go around a corner. Your safety glasses will protect
-            probably your most valuable of your seven senses: your eyesight.
-            Flying objects, dust, grit, sand, are all blocked when you are
-            wearing your proper safety glasses. Once your photo is snapped,
-            Check-in will insure that you are ready to go! If any problems,
-            please call your supervisor. Have a great day!!
-          </p>
-        </div>
+        <p>
+          Worker Safety: Check-in code to make sure you are safe and ready to go
+          for work!
+        </p>
+        <p>
+          Working here at XYZ Construction corporation means that you are ready,
+          rested, and have your proper personal protective equipment (PPE) on.
+          For XYZ construction sites, that means you are wearing your safety
+          glasses and hardhat on!
+        </p>
+        <p>
+          want to make sure that we meet the ASME standards for construction
+          sites and, more importantly, keep you safe from falling objects, or
+          hitting your head when you go around a corner. Your safety glasses
+          will protect probably your most valuable of your seven senses: your
+          eyesight. Flying objects, dust, grit, sand, are all blocked when you
+          are wearing your proper safety glasses.
+        </p>
+        <p>
+          Once your photo is snapped, Check-in will insure that you are ready to
+          go! If any problems, please call your supervisor. Have a great day!!
+        </p>
       </div>
-<!-- ======= -->
-    <div class="container" id="content">
-      <p>
-        Worker Safety: Check-in code to make sure you are safe and ready to go
-        for work! Working here at XYZ Construction corporation means that you
-        are ready, rested, and have your proper personal protective equipment
-        (PPE) on. For XYZ construction sites, that means you are wearing your
-        safety glasses and hardhat on! We want to make sure that we meet the
-        ASME standards for construction sites and, more importantly, keep you
-        safe from falling objects, or hitting your head when you go around a
-        corner. Your safety glasses will protect probably your most valuable of
-        your seven senses: your eyesight. Flying objects, dust, grit, sand, are
-        all blocked when you are wearing your proper safety glasses. Once your
-        photo is snapped, Check-in will insure that you are ready to go! If any
-        problems, please call your supervisor. Have a great day!!
-      </p>
-<!-- >>>>>>> master -->
     </div>
 
-    <div id="imageDiv"></div>
+    <br />
+
+    <div class="container" id="image-container">
+      <div class="row">
+        <div class="col s3" id="imageDiv"></div>
+      </div>
+    </div>
 
     <script src="assets/javascript/app.js"></script>
   </body>
