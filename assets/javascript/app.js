@@ -29,7 +29,7 @@ $(document).ready(function() {
   ];
 
   for (var i = 0; i < imageUrl.length; i++) {
-    var tag = `<div class=row><div class=column id=img${i} > <img id=img${i} class='checkImg' src=${imageUrl[i]}></img></div></div>`;
+    var tag = `<div class='column' id=img${i} > <img id=img${i} class='checkImg' style='width:100%' src=${imageUrl[i]}></img><div id="gif"></dif></div>`;
 
     $("#imageDiv").append(tag);
   }
@@ -54,27 +54,27 @@ $(document).ready(function() {
       var hardhat = false;
 
       if (response.photos[0].tags[0].attributes.hat.value == "true") {
-        let html = ` <span id=detector>HARD HAT DETECTED!!</span>`;
+        let html = `<div><span>HARD HAT DETECTED!!</span></div>`;
         hardhat = true;
         $(photoID).append(html);
       } else {
-        let html = `<span id=detector >HARDHAT NOT DETECTED!!</span>`;
+        let html = `<div><span>HARD HAT NOT DETECTED!!</span></div>`;
         $(photoID).append(html);
       }
 
       if (response.photos[0].tags[0].attributes.glasses.value == "true") {
-        let html = `<span id=detector >GLASSES DETECTED!!</span>`;
+        let html = `<div><span>GLASSES DETECTED!!</span></div>`;
         glasses = true;
         $(photoID).append(html);
       } else {
-        let html = `<span id=detector >GLASSES NOT DETECTED!!</span>`;
+        let html = `<div><span>GLASSES NOT DETECTED!!</span></div>`;
         $(photoID).append(html);
       }
 
       if (glasses === true && hardhat === true) {
-        giphyCall("success");
+        giphyCall("your good");
       } else {
-        giphyCall("fail");
+        giphyCall("nope");
       }
     });
   });
@@ -82,7 +82,6 @@ $(document).ready(function() {
 
 //Giphy API
 function giphyCall(pass) {
-  // console.log("thing: " + thing);
   var queryURL =
     "https://api.giphy.com/v1/gifs/search?q=" +
     pass +
@@ -94,22 +93,8 @@ function giphyCall(pass) {
   }).then(function(response) {
     console.log(response.data[0].images.fixed_height.url);
     var gif = response.data[0].images.fixed_height.url;
-    // var gifimg = $("<img src=" + gif + ">");
-    var html = `<img src="${gif}"></img>`;
+    var html = `<img id="text" src="${gif}"></img>`;
     console.log(html);
-    $("#imageDiv").append(html);
+    $("#gif").append(html);
   });
 }
-
-$(document).on("click", ".giphy-img", function() {
-  console.log("on click");
-  var state = $(this).attr("state");
-  if (state == "still") {
-    var animatedUrl = $(this).attr("data-animate");
-    $(this).attr("src", animatedUrl);
-    $(this).attr("state", "animated");
-  }
-  var stillUrl = $(this).attr("data-still");
-  $(this).attr("src", stillUrl);
-  $(this).attr("state", "still");
-});
