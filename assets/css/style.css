@@ -107,3 +107,7 @@ label {
 form {
   margin-top: 10%;
 }
+
+#inputArea {
+  height: 150px;
+}
