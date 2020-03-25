@@ -37,7 +37,7 @@ $(document).ready(function() {
       let tag = $(`
   <div class="col s3 imgDiv">
       <div class='imgDiv${i}'>
-      <img src=${imageUrl[i]} class="responsive-img img">
+      <img src=${imageUrl[i]} style="height:250px; width:300px" class="responsive-img img">
       </div>
     <button class="btn-large btn-thing waves-effect waves-light" src=${imageUrl[i]} index='${i}'>Ready For Work?</button>
   </div>

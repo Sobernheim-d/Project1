@@ -4,8 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Safety First</title>
-
-    <!-- jquery -->
+    <link rel="icon" href="assets/images/icon.png" <!-- jquery -- />
     <script src="https://code.jquery.com/jquery.js"></script>
 
     <!-- materialize -->
@@ -23,15 +22,23 @@
   </head>
 
   <body>
-    <div class="container">
+    <div id="home"></div>
+
+    <ul class="nav" id="nav">
       <h1>Worker Safety Inspector 3000</h1>
-
+      <li><a href="#home">Home |</a></li>
+      <li><a href="#contactUs">Contact Us |</a></li>
+      <li><a href="#imageDiv">Demo |</a></li>
+    </ul>
+    <br /><br /><br /><br /><br />
+    <div class="container">
       <br />
-
-      <h3>
-        Are you <span id="ready">ready </span><span id="to">to </span
-        ><span id="go">GO</span>?
-      </h3>
+      <div id="areYouReady">
+        <h3>
+          ARE YOU <span id="ready">READY </span><span id="to">TO </span
+          ><span id="go">GO</span>?
+        </h3>
+      </div>
       <div class="row">
         <div class="col s5">
           <img
@@ -42,32 +49,75 @@
           />
         </div>
 
-        <p>
-          Worker Safety: Check-in code to make sure you are safe and ready to go
-          for work!
-        </p>
-        <p>
-          Working here at XYZ Construction corporation means that you are ready,
-          rested, and have your proper personal protective equipment (PPE) on.
-          For XYZ construction sites, that means you are wearing your safety
-          glasses and hardhat on!
-        </p>
-        <p>
-          want to make sure that we meet the ASME standards for construction
-          sites and, more importantly, keep you safe from falling objects, or
-          hitting your head when you go around a corner. Your safety glasses
-          will protect probably your most valuable of your seven senses: your
-          eyesight. Flying objects, dust, grit, sand, are all blocked when you
-          are wearing your proper safety glasses.
-        </p>
-        <p>
-          Once your photo is snapped, Check-in will insure that you are ready to
-          go! If any problems, please call your supervisor. Have a great day!!
-        </p>
+        <div id="aboutUs">
+          <p>
+            Worker Safety: Check-in code to make sure you are safe and ready to
+            go for work!
+          </p>
+          <p>
+            Working here at XYZ Construction corporation means that you are
+            ready, rested, and have your proper personal protective equipment
+            (PPE) on. For XYZ construction sites, that means you are wearing
+            your safety glasses and hard hat on!
+          </p>
+          <p>
+            We want to make sure that we meet the ASME standards for
+            construction sites and, more importantly, keep you safe from falling
+            objects, or hitting your head when you go around a corner. Your
+            safety glasses will protect probably your most valuable of your
+            seven senses: your eyesight. Flying objects, dust, grit, sand, are
+            all blocked when you are wearing your proper safety glasses.
+          </p>
+          <p>
+            Once your photo is snapped, Check-in will insure that you are ready
+            to go! If any problems, please call your supervisor. Have a great
+            day!!
+          </p>
+        </div>
       </div>
     </div>
-
-    <br />
+    <br /><br /><br /><br /><br />
+    <div id="contactUs"></div>
+    <br /><br /><br /><br /><br />
+    <div class="container">
+      <p>
+        If you are interested or have any questions at all, please feel free to
+        contact us at any time. We will respond to you ASAP!
+      </p>
+      <form>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">Email</label>
+            <input type="email" class="form-control" id="inputEmail4" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputAddress">Address</label>
+          <input
+            type="text"
+            class="form-control"
+            id="inputAddress"
+            placeholder="1234 Main St"
+          />
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputCity">City</label>
+            <input type="text" class="form-control" id="inputCity" />
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputState">State</label>
+            <input id="inputState" class="form-control" />
+          </div>
+          <div class="form-group col-md-2">
+            <label for="inputZip">Zip</label>
+            <input type="text" class="form-control" id="inputZip" />
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Contact Us</button>
+      </form>
+    </div>
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
     <div class="container divContainer" id="imageDiv"></div>
     <div class="center-align">
       <button id="resetBtn" class="waves-effect waves-light btn-large orange">
@@ -75,5 +125,13 @@
       </button>
     </div>
     <script src="assets/javascript/app.js"></script>
+
+    <br />
+
+    <footer class="page-footer">
+      <div class="container footer">
+        © 2020 Copyright WSI3000
+      </div>
+    </footer>
   </body>
 </html>
