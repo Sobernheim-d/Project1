@@ -26,8 +26,6 @@ h1 {
   padding-bottom: 15px;
   padding-left: 0px;
   float: left;
-  /* height: 210px;
-  width: 320px; */
 }
 
 #detector {
@@ -38,23 +36,3 @@ h1 {
   width: 350px;
   padding: 5px;
 }
-/* 
-#image-cantainer {
-  float: left;
-}
-
-#imageDiv {
-  float: left;
-} */
-/* p {
-  padding-left: 5px;
-} */
-
-/* #image-container {
-  text-align: auto;
-} */
-
-/* #imageDiv {
-  height: 150px;
-  width: 150px;
-} */
