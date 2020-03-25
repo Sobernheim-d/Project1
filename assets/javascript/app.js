@@ -127,7 +127,7 @@ $(document).ready(function() {
     var queryURL =
       "https://api.giphy.com/v1/gifs/search?q=" +
       pass +
-      "&api_key=C01R2xURFqCz6oEkz89pIqaDGFPgxD4N&limit=10";
+      "&api_key=C01R2xURFqCz6oEkz89pIqaDGFPgxD4N&limit=20";
 
     $.ajax({
       url: queryURL,
