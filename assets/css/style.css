@@ -69,6 +69,7 @@ p {
   position: fixed;
   width: 100%;
   padding: 0;
+  padding-bottom: 10px;
 }
 
 .nav > li {
@@ -95,4 +96,14 @@ html {
 
 label {
   font-size: 20px;
+}
+
+#submitBtn {
+  font-size: 20px;
+  margin-left: 45%;
+  margin-top: 50px;
+}
+
+form {
+  margin-top: 10%;
 }

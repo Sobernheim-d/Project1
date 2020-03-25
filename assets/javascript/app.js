@@ -1,6 +1,5 @@
 $(document).ready(function() {
-  // Your web app's Firebase configuration
-
+  //Was going to be for time stamp when clocked in
   var firebaseConfig = {
     apiKey: "AIzaSyC7BfOPJId6bXHFz1Q1Y-p8POWRrIguRrk",
     authDomain: "safety-check-first.firebaseapp.com",
@@ -14,8 +13,7 @@ $(document).ready(function() {
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 
-  //Skybio API
-
+  //Varables
   var imageUrl = [
     "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ9ZZODgBDQ6v5ZONYYah7R4Ci02hMl-bd9wTky5V9ypka-MCPI",
     "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fst3.depositphotos.com%2F1518767%2F14365%2Fi%2F950%2Fdepositphotos_143650817-stock-photo-portrait-of-smiling-factory-worker.jpg&f=1&nofb=1",
@@ -42,7 +40,6 @@ $(document).ready(function() {
     <button class="btn-large btn-thing waves-effect waves-light" src=${imageUrl[i]} index='${i}'>Ready For Work?</button>
   </div>
   `);
-      // $("#imageDiv").append(tag);
 
       if (i < 4) {
         row1.append(tag);
@@ -57,13 +54,11 @@ $(document).ready(function() {
 
   drawScreen();
 
+  //Skybio API
   $(document).on("click", ".btn-thing", function() {
     let index = $(this).attr("index");
-    // $(".imgDiv" + index).toggle();
 
     imageUrl = $(this).attr("src");
-    // let photoID = `#${$(this).attr("id")}`;
-    // console.log(photoID);
 
     let apiUrl = `https://api.skybiometry.com/fc/faces/detect.json?api_key=61m75vnv9srntq7ui9b9u1gt83&api_secret=ngnjmpho52tfdgnr5u891hs60u&urls=${imageUrl}&attributes=all`;
 
@@ -97,7 +92,7 @@ $(document).ready(function() {
       }
 
       if (glasses === true && hardhat === true) {
-        giphyCall("hell ya", index);
+        giphyCall("ready", index);
       } else {
         giphyCall("nope", index);
       }
@@ -127,18 +122,17 @@ $(document).ready(function() {
     var queryURL =
       "https://api.giphy.com/v1/gifs/search?q=" +
       pass +
-      "&api_key=C01R2xURFqCz6oEkz89pIqaDGFPgxD4N&limit=20";
+      "&api_key=C01R2xURFqCz6oEkz89pIqaDGFPgxD4N&limit=25";
 
     $.ajax({
       url: queryURL,
       method: "GET"
     }).then(function(response) {
-      var random = Math.floor(Math.random() * 10);
+      var random = Math.floor(Math.random() * 25);
       console.log(response.data[0].images.fixed_height.url);
       var gif = response.data[random].images.fixed_height.url;
       let html = `<img class="responsive-img" id="text" src="${gif}"></img>`;
       console.log(html);
-      // $(pass).append(html);
       $(".imgDiv" + index).append(html);
     });
   }
