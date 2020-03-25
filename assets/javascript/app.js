@@ -64,6 +64,7 @@ $(document).ready(function() {
     imageUrl = $(this).attr("src");
     // let photoID = `#${$(this).attr("id")}`;
     // console.log(photoID);
+
     let apiUrl = `https://api.skybiometry.com/fc/faces/detect.json?api_key=61m75vnv9srntq7ui9b9u1gt83&api_secret=ngnjmpho52tfdgnr5u891hs60u&urls=${imageUrl}&attributes=all`;
 
     let settings = {
